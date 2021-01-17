@@ -1,0 +1,11 @@
+.wrapper {
+    --mainColor: #5f78de;
+    & .btn {
+        background-color: var(--mainColor);
+        border: none;
+    }
+}
+
+
+
+
