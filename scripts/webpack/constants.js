@@ -1,6 +1,8 @@
-const path = require('path');
+import path from 'path';
 
-const {path: PROJECT_ROOT} = require('app-root-path');
+import root from 'app-root-path';
+
+const PROJECT_ROOT = root.path;
 
 exports.PROJECT_ROOT = PROJECT_ROOT;
 exports.SOURCE_DIRECTORY = path.resolve(PROJECT_ROOT, './source');

@@ -1,23 +1,22 @@
 module.exports = (api) => {
   const env = api.env();
 
-  api.cache.never();
+  api.cache.using(() => env === 'development');
 
-  const plugins = ["@babel/plugin-proposal-class-properties"];
-
-  if (env === 'development') {
-    plugins.push("react-hot-loader/babel");
-  }
+  const plugins = ["dynamic-import-node"];
 
   return {
     presets: [
-      '@babel/preset-react',
       [
         '@babel/preset-env', {
+        //useBuiltIns: 'usage',
+        shippedProposals: true,
         debug: false, //выводит консольку
         spec: true,
         loose: false,
-        modules: false
+        targets: {
+          node: 'current'
+        }
       }
       ]
     ],

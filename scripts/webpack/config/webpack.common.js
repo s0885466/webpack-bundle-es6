@@ -1,10 +1,14 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const env = require('postcss-preset-env');
+//import {loadJavaScript} from "../modules";
 
-const {BUILD_DIRECTORY, SOURCE_DIRECTORY} = require('../constants');
+import {merge} from  'webpack-merge';
+
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import env from 'postcss-preset-env';
+
+import {BUILD_DIRECTORY, SOURCE_DIRECTORY} from '../constants';
 
 module.exports = () => {
-  return {
+  return merge({
     mode: 'none',
     entry: [
       SOURCE_DIRECTORY
@@ -58,5 +62,8 @@ module.exports = () => {
         },
       ],
     },
-  }
+  },
+    //loadJavaScript()
+
+  )
 };

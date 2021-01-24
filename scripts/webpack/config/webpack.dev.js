@@ -1,7 +1,7 @@
-const {merge} = require('webpack-merge');
-const getCommonConfig = require('./webpack.common');
-const {HotModuleReplacementPlugin} = require('webpack');
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+import {merge} from 'webpack-merge';
+import getCommonConfig from './webpack.common';
+import {HotModuleReplacementPlugin} from 'webpack';
+import ErrorOverlayPlugin from 'error-overlay-webpack-plugin';
 
 module.exports = () => {
   return merge(getCommonConfig(),

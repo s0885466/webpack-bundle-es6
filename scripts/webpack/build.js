@@ -1,6 +1,6 @@
-const webpack = require('webpack');
-const chalk = require('chalk');
-const getProdConfig = require('./config/webpack.prod');
+import webpack from 'webpack';
+import chalk from 'chalk';
+import getProdConfig from './config/webpack.prod';
 
 const compiler = webpack(getProdConfig());
 
