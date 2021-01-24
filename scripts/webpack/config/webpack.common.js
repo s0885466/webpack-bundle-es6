@@ -2,7 +2,7 @@ import {merge} from  'webpack-merge';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 import {BUILD_DIRECTORY, SOURCE_DIRECTORY} from '../constants';
-import {loadJavaScript, loadCss} from "../modules";
+import {loadJavaScript, loadCss, loadScss} from "../modules";
 
 module.exports = () => {
   return merge({
@@ -21,6 +21,7 @@ module.exports = () => {
     ],
   },
     loadJavaScript(),
-    loadCss()
+    loadCss(),
+    loadScss()
   )
 };
