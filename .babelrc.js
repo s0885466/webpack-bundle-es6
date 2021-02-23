@@ -11,7 +11,6 @@ module.exports = (api) => {
 
   return {
     presets: [
-      '@babel/preset-react',
       [
         '@babel/preset-env', {
         debug: false, //выводит консольку
@@ -19,7 +18,9 @@ module.exports = (api) => {
         loose: false,
         modules: false
       }
-      ]
+      ],
+      '@babel/preset-react',
+      '@babel/typescript'
     ],
     plugins
   }
